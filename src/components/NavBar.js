@@ -4,11 +4,11 @@ export default function NavBar() {
   return (
     <>
     <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"/>
-                Foody
+            <a class="navbar-brand" href="/">
+                {/* <img src="BMM_2.png" alt="" width="30" height="24" className="d-inline-block align-text-top"/> */}
+                BMM
             </a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
