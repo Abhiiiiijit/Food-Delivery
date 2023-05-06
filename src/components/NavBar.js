@@ -7,7 +7,7 @@ export default function NavBar() {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
             <a class="navbar-brand" href="/">
-                {/* <img src="BMM_2.png" alt="" width="30" height="24" className="d-inline-block align-text-top"/> */}
+                <img src="BMM_2.png" alt="" width="30" height="24" className="d-inline-block align-text-top"/>
                 BMM
             </a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
