@@ -7,7 +7,11 @@ font-family: 'Lobster', cursive;
 font-family: 'Vina Sans', cursive; */
 
 .fontchange{
-    font-family: 'Lobster', cursive;
-    color: goldenrod;
+    font-family: 'Poppins', sans-serif;
+    /* color: goldenrod; */
     font-weight: bold;
+    padding-left: '2px';
+}
+.colors{
+    color:blanchedalmond;
 }
