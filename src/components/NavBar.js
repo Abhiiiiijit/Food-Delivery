@@ -18,7 +18,7 @@ export default function NavBar() {
               />
               <span className="fontchange fs-2 colors">
                 {" "}
-                <span> </span> Bring My Meal <MdDeliveryDining />
+                <span> </span> Bring Me Meal <MdDeliveryDining />
               </span>
             </Link>
             <button

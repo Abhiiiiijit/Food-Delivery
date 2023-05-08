@@ -6,12 +6,13 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Lobster', cursive;
 font-family: 'Vina Sans', cursive; */
 
-.fontchange{
+.fontchange {
     font-family: 'Poppins', sans-serif;
     /* color: goldenrod; */
     font-weight: bold;
     padding-left: '2px';
 }
-.colors{
-    color:blanchedalmond;
+
+.colors {
+    color: blanchedalmond;
 }
