@@ -3,9 +3,80 @@ import "./card.css";
 export default function Card() {
   return (
     <>
-      <div className="ml-3">
+      <div className="ml-6">
         <div className="card card_style mt-3">
-          <img src="one.jpg" className="card-img-top " alt="..." />
+          <div
+            id="carouselExampleDark"
+            className="carousel carousel-dark slide"
+            data-bs-ride="carousel"
+          >
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img src="Foody_1.png" className="d-block w-100" alt="..." />
+              </div>
+              <div className="carousel-item">
+                <img src="Foody_1.png" className="d-block w-100" alt="..." />
+              </div>
+              <div className="carousel-item">
+                <img src="Foody_1.png" className="d-block w-100" alt="..." />
+              </div>
+              <div className="carousel-item">
+                <img src="Foody_1.png" className="d-block w-100" alt="..." />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
           {/* Foody_1.png */}
           <div className="card-body">
             <h3 className="card-title">Bring Me Meal</h3>
