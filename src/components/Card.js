@@ -40,13 +40,13 @@ export default function Card() {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src="Foody_1.png" className="d-block w-100" alt="..." />
+                <img src="Images/one.jpg" className="d-block w-100" alt="..." />
               </div>
               <div className="carousel-item">
                 <img src="Foody_1.png" className="d-block w-100" alt="..." />
               </div>
               <div className="carousel-item">
-                <img src="Foody_1.png" className="d-block w-100" alt="..." />
+                <img src="Images/two.jpg" className="d-block w-100" alt="..." />
               </div>
               <div className="carousel-item">
                 <img src="Foody_1.png" className="d-block w-100" alt="..." />
@@ -102,9 +102,12 @@ export default function Card() {
                 <option value="full">Full</option>
                 <option value="bulk">Bulk</option>
               </select>
-              <button className="btn btn-outline-info" to="/">
-                About
-              </button>
+              <div className="d-inline h-100 fs-5">Total Price:-</div>
+              <p>
+                <button className="btn btn-outline-info" to="/">
+                  About
+                </button>
+              </p>
             </div>
           </div>
         </div>
