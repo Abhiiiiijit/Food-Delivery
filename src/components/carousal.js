@@ -32,28 +32,44 @@ export default function Carousal() {
             ></button>
           </div>
           <div className="carousel-inner">
-
+            <div className="carousel-caption " style={{zIndex:"5"}}>
+              <form className="d-flex">
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  className="btn btn-outline-success"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
             <div className="carousel-item active">
               <img
                 src="https://source.unsplash.com/random/700x500/?burger"
                 className="d-block w-100 h-100"
-                alt="..."
+                style={{filter:"brightness(30%"}}
+                alt="Burger"
               />
-
             </div>
             <div className="carousel-item">
               <img
                 src="https://source.unsplash.com/random/700x500/?pizza"
                 className="d-block w-100 h-100"
-                alt="..."
+                style={{filter:"brightness(30%"}}
+                alt="Pizza"
               />
-
             </div>
             <div className="carousel-item">
               <img
                 src="https://source.unsplash.com/random/700x500/?barbeque"
                 className="d-block w-100 h-100"
-                alt="..."
+                style={{filter:"brightness(30%"}}
+                alt="Barbeque"
               />
             </div>
           </div>
