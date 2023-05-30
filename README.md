@@ -1,7 +1,11 @@
 # Foody !!
+
 ## Full Stomach 😋
+
 ## Happy Heart 🥰
+
 =======
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -35,10 +39,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
+## `Random Image Generator`
 
+`https://source.unsplash.com/random/700x500/?burger`
 
-Random Image Generator
-https://source.unsplash.com/random/700x500/?burger
+## IMP Links
 
-IMP Links 
-1. https://react-icons.github.io/react-icons
+1. `https://react-icons.github.io/react-icons`
