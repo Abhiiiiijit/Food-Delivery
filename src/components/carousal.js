@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function Carousal() {
   return (
     <>
@@ -8,6 +7,7 @@ export default function Carousal() {
           id="carouselExampleCaptions"
           className="carousel slide carousel-fade"
           data-bs-ride="carousel"
+          style={{objectFit:"contain !important"}}
         >
           <div className="carousel-indicators">
             <button
@@ -31,8 +31,8 @@ export default function Carousal() {
               aria-label="Slide 3"
             ></button>
           </div>
-          <div className="carousel-inner">
-            <div className="carousel-caption " style={{zIndex:"5"}}>
+          <div className="carousel-inner" id="carousel">
+            <div className="carousel-caption " style={{zIndex:"10"}}>
               <form className="d-flex">
                 <input
                   className="form-control me-2"
@@ -41,7 +41,7 @@ export default function Carousal() {
                   aria-label="Search"
                 />
                 <button
-                  className="btn btn-outline-success"
+                  className="btn btn-success"
                   type="submit"
                 >
                   Search
@@ -50,7 +50,7 @@ export default function Carousal() {
             </div>
             <div className="carousel-item active">
               <img
-                src="https://source.unsplash.com/random/700x500/?burger"
+                src="https://source.unsplash.com/random/700x400/?burger"
                 className="d-block w-100 h-100"
                 style={{filter:"brightness(30%"}}
                 alt="Burger"
@@ -58,7 +58,7 @@ export default function Carousal() {
             </div>
             <div className="carousel-item">
               <img
-                src="https://source.unsplash.com/random/700x500/?pizza"
+                src="https://source.unsplash.com/random/700x400/?pizza"
                 className="d-block w-100 h-100"
                 style={{filter:"brightness(30%"}}
                 alt="Pizza"
@@ -66,7 +66,7 @@ export default function Carousal() {
             </div>
             <div className="carousel-item">
               <img
-                src="https://source.unsplash.com/random/700x500/?barbeque"
+                src="https://source.unsplash.com/random/700x400/?barbeque"
                 className="d-block w-100 h-100"
                 style={{filter:"brightness(30%"}}
                 alt="Barbeque"

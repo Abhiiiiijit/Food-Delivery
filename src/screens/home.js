@@ -8,19 +8,16 @@ export default function home() {
   return (
     <div>
       <div>
-        {" "}
-        <NavBar />{" "}
+        <NavBar />
       </div>
       <div>
-        <Carousal/>
+        <Carousal />
+      </div>
+      <div className="m-3">
+        <Card />
       </div>
       <div>
-        {" "}
-        <Card />{" "}
-      </div>
-      <div>
-        {" "}
-        <Footer />{" "}
+        <Footer />
       </div>
     </div>
   );
