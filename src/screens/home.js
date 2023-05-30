@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
+import Carousal from "../components/carousal";
 
 export default function home() {
   return (
@@ -9,6 +10,9 @@ export default function home() {
       <div>
         {" "}
         <NavBar />{" "}
+      </div>
+      <div>
+        <Carousal/>
       </div>
       <div>
         {" "}
