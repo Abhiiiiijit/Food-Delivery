@@ -3,7 +3,7 @@ import "./card.css";
 export default function Card() {
   return (
     <>
-      <div className="ml-6">
+      {/* <div className="ml-6">
         <div className="card card_style mt-3">
           <div
             id="carouselExampleDark"
@@ -94,11 +94,11 @@ export default function Card() {
             </button>
           </div>
           {/* Foody_1.png */}
-          <div className="card-body">
+      {/* <div className="card-body">
             <h3 className="card-title">Bring Me Meal</h3>
             <p className="card-text">Food Delivery Site</p>
             {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-            <div className="container w-100">
+      {/* <div className="container w-100">
               {" "}
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
               earum eveniet. Perspiciatis distinctio minus maxime voluptatibus
@@ -125,6 +125,46 @@ export default function Card() {
                 </button>
               </p>
             </div>
+          </div> */}
+      {/* </div> */}
+      {/* </div> */}
+      <div>
+        <div
+          className="card mt-3"
+          style={{ width: "16rem", maxHeight: "auto"}}
+        >
+          <img
+            src="https://source.unsplash.com/random/300x200/?burger"
+            className="d-block w-100"
+            alt="..."
+          />
+          <div className="card-body">
+            <h5 className="card-title">Burger</h5>
+            <p className="card-text">
+              This is some random text. This is description.
+            </p>
+            <div className="container w-100 p-0" style={{ height: "38px" }}>
+              <select className="m-2 h-100 bg-success rounded">
+                {Array.from(Array(10), (e, i) => {
+                  return (
+                    <option key={i + 1} value={i + 1}>
+                      {" "}
+                      {i + 1}{" "}
+                    </option>
+                  );
+                })}
+              </select>
+              <select className="m-2 h-100 bg-success rounded">
+                <option value="half">Half</option>
+                <option value="full">Full</option>
+                <option value="bulk">Bulk</option>
+              </select>
+            </div>
+            <hr></hr>
+            <button className={`btn btn-success justify-center ms-2 `}>
+              Add to Cart
+            </button>
+            {/* <button className={`btn btn-danger justify-center ms-2 ${btnEnable ? "" : "disabled"}`} onClick={handleRemoveCart}>Remove</button> */}
           </div>
         </div>
       </div>
