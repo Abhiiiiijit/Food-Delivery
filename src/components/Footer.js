@@ -23,7 +23,7 @@ export default function Footer() {
             </span>
           </div>
 
-          <ul className="nav col-md-4 justify-content-end list-unstyled d-flex fontchange colors">
+          <ul className="nav col-md-4 mr-4 justify-content-end list-unstyled d-flex fontchange colors">
             <li className="ms-3 colors">
               <Link className="text-muted" to="/">
                 <AiFillInstagram/>
