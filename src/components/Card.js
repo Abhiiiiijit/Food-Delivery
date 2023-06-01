@@ -131,7 +131,7 @@ export default function Card() {
       <div>
         <div
           className="card mt-3"
-          style={{ width: "16rem", maxHeight: "auto"}}
+          style={{ width: "16rem", maxHeight: "auto" }}
         >
           <img
             src="https://source.unsplash.com/random/300x200/?burger"
@@ -143,8 +143,11 @@ export default function Card() {
             <p className="card-text">
               This is some random text. This is description.
             </p>
-            <div className="container w-100 p-0" style={{ height: "38px"} }>
-              <select className="m-2 w-25 h-100 bg-danger rounded" style={{color:"white"}}>
+            <div className="container w-100 p-0" style={{ height: "38px" }}>
+              <select
+                className="m-2 w-25 h-100 bg-danger rounded"
+                style={{ color: "white" }}
+              >
                 {Array.from(Array(10), (e, i) => {
                   return (
                     <option key={i + 1} value={i + 1}>
@@ -154,17 +157,22 @@ export default function Card() {
                   );
                 })}
               </select>
-              <select className="m-2 w-50 h-100 bg-danger rounded" style={{color:"white"}}>
-                <option value="half">Half (1 Serve)</option>
-                <option value="full">Full (2-3 Server)</option>
-                <option value="bulk">Bulk (7-8 Server)</option>
+              <select
+                className="m-2 w-50 h-100 bg-danger rounded"
+                style={{ color: "white" }}
+              >
+                <option value="half">Half</option>
+                <option value="full">Full</option>
+                <option value="bulk">Bulk</option>
               </select>
             </div>
             <hr></hr>
             <button className={`btn btn-outline-warning justify-center ms-2 `}>
               Add to Cart
             </button>
-            <button className="btn btn-outline-danger justify-center ms-2" >Remove</button>
+            <button className="btn btn-outline-danger justify-center ms-2">
+              Remove
+            </button>
           </div>
         </div>
       </div>
