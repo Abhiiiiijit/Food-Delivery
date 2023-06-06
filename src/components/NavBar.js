@@ -43,9 +43,16 @@ export default function NavBar() {
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
+              </ul>
+              <ul className="navbar-nav"> 
+              <li className="nav-item">
                   <Link className="nav-link fontchange" to="/login">
-                    Login
+                    <button className="btn btn-outline-success">Login</button>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link fontchange" to="/creatuser">
+                    <button className="btn btn-outline-info">SignUp</button>
                   </Link>
                 </li>
               </ul>

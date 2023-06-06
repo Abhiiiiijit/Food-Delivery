@@ -5,7 +5,7 @@ const Order = require("../models/Orders");
 const { body, validationResult } = require("express-validator");
 router.post(
   "/creatuser",
-  body('email').isEmail(),
+  body('email','Incorrect Email').isEmail(),
   body('name').isLength({ min:5 }),
   body('password','Incorrect Password').isLength({ min: 5 }),
   async (req, res) => {
