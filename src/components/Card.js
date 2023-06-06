@@ -141,11 +141,11 @@ export default function Card() {
           <div className="card-body">
             <h5 className="card-title">Burger</h5>
             <p className="card-text">
-              This is some random text. This is description.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, sunt?
             </p>
             <div className="container w-100 p-0" style={{ height: "38px" }}>
               <select
-                className="m-2 w-25 h-100 bg-danger rounded"
+                className="m-2 w-25 h-100 bg-success rounded"
                 style={{ color: "white" }}
               >
                 {Array.from(Array(10), (e, i) => {
@@ -158,7 +158,7 @@ export default function Card() {
                 })}
               </select>
               <select
-                className="m-2 w-50 h-100 bg-danger rounded"
+                className="m-2 w-50 h-100 bg-success rounded"
                 style={{ color: "white" }}
               >
                 <option value="half">Half</option>
