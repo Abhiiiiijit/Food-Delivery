@@ -18,7 +18,7 @@ export default function Login() {
       }));
 
       try {
-        const response = fetch("http://localhost:4000/api/loginuser", {
+        const response = await fetch("http://localhost:4000/api/loginuser", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default function Login() {
         if(!response.ok){
           throw new Error("Network Response Not OK");
         }
-        const json = await response.json;
+        const json = await response.json();
         console.log(json);
     
         if (json.success) {
