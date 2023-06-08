@@ -1,0 +1,10 @@
+.signup{
+    background-image: url("https://source.unsplash.com/random/700x400/?food");
+    background-size: cover;
+    height: 100vh;
+}
+.login{
+    background-image: url("https://source.unsplash.com/random/700x400/?meal");
+    background-size: cover;
+    height: 100vh;
+}

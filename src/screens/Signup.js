@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 export default function Signup() {
   const [credential, setcredential] = useState({
@@ -12,12 +13,14 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(JSON.stringify({
+    console.log(
+      JSON.stringify({
         name: credential.name,
         email: credential.email,
         password: credential.password,
         location: credential.geoLocation,
-      }))
+      })
+    );
     const response = fetch("http://localhost:4000/api/creatuser", {
       method: "POST",
       headers: {
@@ -43,20 +46,13 @@ export default function Signup() {
   };
   return (
     <>
-      <div
-        style={{
-          backgroundImage:
-            'url("https://source.unsplash.com/random/700x400/?food")',
-          backgroundSize: "cover",
-          height: "100vh",
-        }}
-      >
+      <div className="signup">
         <div>
           <NavBar />
         </div>
         <div className="container">
           <form
-            className="w-50 m-auto mt-5 border border-success rounded"
+            className="w-50 m-auto mt-5 rounded"
             onSubmit={handleSubmit}
             style={{
               background: "rgba( 0, 0, 0, 0.5 )",
@@ -64,7 +60,7 @@ export default function Signup() {
               "backdrop-filter": "blur( 7.5px )",
               "-webkit-backdrop-filter": "blur( 7.5px )",
               "border-radius": "10px",
-              'border': "1px solid rgba( 255, 255, 255, 0.18 )",
+              border: "1px solid rgba( 255, 255, 255, 0.18 )",
             }}
           >
             <div className="m-3">
