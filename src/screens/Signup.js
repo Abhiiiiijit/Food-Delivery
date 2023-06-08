@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../components/NavBar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
 export default function Signup() {
@@ -10,6 +10,8 @@ export default function Signup() {
     password: "",
     geoLocation: "",
   });
+
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +23,9 @@ export default function Signup() {
         location: credential.geoLocation,
       })
     );
-    const response = fetch("http://localhost:4000/api/creatuser", {
+
+    try{
+    const response = await fetch("http://localhost:4000/api/creatuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,10 +41,18 @@ export default function Signup() {
     const json = await response.json();
     console.log(json);
 
-    if (!json.success) {
+    if (json.success) {
+      navigate("/login");
+      alert("Now Login");
+    }
+    else{
       alert("Enter Valid Credentials");
     }
-  };
+  }
+  catch(error){
+    console.error("Error:", error);
+    alert("An Error Occured");
+  }};
   const onChange = async (event) => {
     setcredential({ ...credential, [event.target.name]: event.target.value });
   };
