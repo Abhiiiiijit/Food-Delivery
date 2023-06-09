@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./font.css";
-import { MdDeliveryDining } from "react-icons/md";
+import { MdDeliveryDining, MdFastfood } from "react-icons/md";
+import { BiLogInCircle } from "react-icons/bi";
+import { RiAccountCircleFill } from "react-icons/ri";
+// import { FaBowlFood } from "react-icons/fa";
+
 export default function NavBar() {
   return (
     <>
@@ -18,7 +22,9 @@ export default function NavBar() {
               />
               <span className="fontchange fs-2 colors">
                 {" "}
-                <span> </span> Bring Me Meal <MdDeliveryDining />
+                <span> </span> Bring Me Meal
+                <MdFastfood />
+                <MdDeliveryDining />
               </span>
             </Link>
             <button
@@ -44,15 +50,19 @@ export default function NavBar() {
                   </Link>
                 </li>
               </ul>
-              <ul className="navbar-nav"> 
-              <li className="nav-item">
+              <ul className="navbar-nav">
+                <li className="nav-item">
                   <Link className="nav-link fontchange" to="/login">
-                    <button className="btn btn-outline-success">Login</button>
+                    <button className="btn btn-outline-success">
+                      <BiLogInCircle /> Login
+                    </button>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link fontchange" to="/creatuser">
-                    <button className="btn btn-outline-info">SignUp</button>
+                    <button className="btn btn-outline-info">
+                      <RiAccountCircleFill /> SignUp
+                    </button>
                   </Link>
                 </li>
               </ul>
