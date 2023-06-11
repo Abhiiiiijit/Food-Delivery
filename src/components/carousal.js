@@ -3,7 +3,7 @@ export default function Carousal() {
   return (
     <>
       <div>
-        <div
+        {/* <div
           id="carouselExampleCaptions"
           className="carousel slide carousel-fade"
           data-bs-ride="carousel"
@@ -97,7 +97,7 @@ export default function Carousal() {
             ></span>
             <span className="visually-hidden">Next</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </>
   );

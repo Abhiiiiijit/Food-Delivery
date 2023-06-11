@@ -1,24 +1,29 @@
 import React from "react";
 import "./card.css";
-export default function Card() {
+export default function Card(props) {
+  let option = props.options;
+  let priceOption = Object.keys(option);
+
   return (
     <>
       <div>
         <div
           className="card mt-3"
-          style={{ width: "16rem", maxHeight: "auto" }}
+          style={{ width: "16rem", maxHeight: "1000px" }}
         >
           <img
-            src="https://source.unsplash.com/random/300x200/?burger"
+            // src= {"https://source.unsplash.com/random/300x200/?FriedRice"}
+            src={props.imgSrc}
             className="d-block w-100"
-            alt="..."
+            style={{ height: "150px", objectFit: "fill" }}
+            alt=""
           />
           <div className="card-body">
-            <h5 className="card-title">Burger</h5>
-            <p className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
-              sunt?
-            </p>
+            <h5 className="card-title fontchange">{props.foodName}</h5>
+            <p className="card-text des">
+              {props.description}
+              {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, ad? */}
+              </p>
             <div className="container w-100 p-0" style={{ height: "38px" }}>
               <select
                 className="m-2 w-25 h-100 bg-success rounded"
@@ -37,18 +42,26 @@ export default function Card() {
                 className="m-2 w-50 h-100 bg-success rounded"
                 style={{ color: "white" }}
               >
-                <option value="half">Half</option>
-                <option value="full">Full</option>
-                <option value="bulk">Bulk</option>
+                {priceOption.map((data) => {
+                  return (
+                    <option key={data} value={data}>
+                      {data}
+                    </option>
+                  );
+                })}
               </select>
             </div>
             <hr></hr>
-            <button className={`btn btn-outline-warning justify-center ms-2 `}>
+            <button
+              className={`btn btn-outline-warning justify-center ms-2 fontchange`}
+            >
               Add to Cart
             </button>
             <button className="btn btn-outline-danger justify-center ms-2">
               Remove
             </button>
+            <hr />
+            <div className="fs-5 ml-3 fontchange">Total Price:</div>
           </div>
         </div>
       </div>

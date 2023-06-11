@@ -1,12 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./font.css";
 import { MdDeliveryDining, MdFastfood } from "react-icons/md";
-import { BiLogInCircle } from "react-icons/bi";
+import { BiLogInCircle, BiLogOutCircle } from "react-icons/bi";
 import { RiAccountCircleFill } from "react-icons/ri";
+import {AiOutlineShoppingCart} from "react-icons/ai";
 // import { FaBowlFood } from "react-icons/fa";
 
 export default function NavBar() {
+  const navigate =  useNavigate();
+  const handleLogout = () =>{
+    localStorage.removeItem("authToken");
+    navigate("/login");
+  }
   return (
     <>
       <div>
@@ -22,10 +28,10 @@ export default function NavBar() {
               />
               <span className="fontchange fs-2 colors">
                 {" "}
-                <MdFastfood />
-                &nbsp;
+                {/* <MdFastfood /> */}
+                {/* &nbsp; */}
                 <span> </span> Bring Me Meal
-                &nbsp;
+                {/* &nbsp; */}
                 <MdDeliveryDining />
               </span>
             </Link>
@@ -41,33 +47,59 @@ export default function NavBar() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
+              <ul className="navbar-nav me-auto">
+                {/* d-flex */}
                 <li className="nav-item">
                   <Link
-                    className="nav-link active fontchange"
+                    className="nav-link active fontchange fs-5"
                     aria-current="page"
                     to="/"
                   >
                     Home
                   </Link>
                 </li>
+                {localStorage.getItem("authToken") ? (
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link active fontchange fs-5"
+                      aria-current="page"
+                      to="/"
+                    >
+                      Orders
+                    </Link>
+                  </li>
+                ) : (
+                  ""
+                )}
               </ul>
-              <ul className="navbar-nav">
-                <li className="nav-item">
+              {!localStorage.getItem("authToken") ? (
+                <div className="d-flex">
                   <Link className="nav-link fontchange" to="/login">
-                    <button className="btn btn-outline-success">
+                    <button className="btn btn-outline-success mx-1">
                       <BiLogInCircle /> Login
                     </button>
                   </Link>
-                </li>
-                <li className="nav-item">
+                  &nbsp; &nbsp;
                   <Link className="nav-link fontchange" to="/creatuser">
                     <button className="btn btn-outline-info">
                       <RiAccountCircleFill /> SignUp
                     </button>
                   </Link>
-                </li>
-              </ul>
+                </div>
+              ) : (
+                <div className="d-flex">
+                  <Link className="nav-link fontchange" to="/login">
+                    <button className="btn btn-outline-light mx-1">
+                      <AiOutlineShoppingCart /> 
+                    </button>
+                  </Link>
+                  <Link className="nav-link fontchange" to="/login">
+                    <button className="btn btn-outline-danger mx-1" onClick={handleLogout}> 
+                      <BiLogOutCircle /> Logout
+                    </button>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </nav>
