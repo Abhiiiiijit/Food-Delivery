@@ -4,8 +4,9 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
-import { BiLogInCircle } from "react-icons/bi";
-import { RiAccountCircleFill } from "react-icons/ri";
+import "./style.css";
+// import { BiLogInCircle } from "react-icons/bi";
+// import { RiAccountCircleFill } from "react-icons/ri";
 // import Carousal from "../components/carousal";
 
 export default function home() {
@@ -138,7 +139,7 @@ export default function home() {
               food_Category.map((data) => {
                 return (
                   <div className="row mb-3">
-                    <div key={data._id} className="fs-3 m-3">
+                    <div key={data._id} className="fs-3 m-3 fontchange">
                       {data.CategoryName}
                     </div>
                     <hr></hr>
@@ -158,11 +159,13 @@ export default function home() {
                               className="col-12 col-md-6 col-lg-3"
                             >
                               <Card
-                                foodName={filterItem.name}
-                                item={filterItem}
+                                fooditem={filterItem}
                                 options={filterItem.options[0]}
-                                imgSrc={filterItem.img}
-                                description={filterItem.description}
+                                // foodName={filterItem.name}
+                                // item={filterItem}
+
+                                // imgSrc={filterItem.img}
+                                // description={filterItem.description}
                               >
                                 {" "}
                               </Card>

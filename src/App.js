@@ -1,4 +1,5 @@
 import "./App.css";
+import { CartProvider } from "./components/ContextReducer";
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
 import Home from "./screens/home";
@@ -8,15 +9,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 function App() {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/creatuser" element={<Signup/>} />
-        </Routes>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/creatuser" element={<Signup />} />
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

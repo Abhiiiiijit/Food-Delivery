@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./font.css";
-import { MdDeliveryDining, MdFastfood } from "react-icons/md";
+import { MdDeliveryDining } from "react-icons/md";
+// MdFastfood
 import { BiLogInCircle, BiLogOutCircle } from "react-icons/bi";
 import { RiAccountCircleFill } from "react-icons/ri";
 import {AiOutlineShoppingCart} from "react-icons/ai";
@@ -26,11 +27,11 @@ export default function NavBar() {
                 height="30"
                 className="d-inline-block align-text-top fontchange"
               />
-              <span className="fontchange fs-2 colors">
+              <span className="fontchange fs-2 colors" style={{fontStyle:'italic'}}>
                 {" "}
                 {/* <MdFastfood /> */}
                 {/* &nbsp; */}
-                <span> </span> Bring Me Meal
+                <span > </span> Bring Me Meal
                 {/* &nbsp; */}
                 <MdDeliveryDining />
               </span>
@@ -88,7 +89,7 @@ export default function NavBar() {
                 </div>
               ) : (
                 <div className="d-flex">
-                  <Link className="nav-link fontchange" to="/login">
+                  <Link className="nav-link fontchange" to="/">
                     <button className="btn btn-outline-light mx-1">
                       <AiOutlineShoppingCart /> 
                     </button>

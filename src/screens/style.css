@@ -12,3 +12,10 @@
 .home{
     background-color: antiquewhite;
 }
+
+.fontchange {
+    font-family: 'Poppins', sans-serif;
+    /* color: goldenrod; */
+    font-weight: bold;
+    padding-left: '2px';
+}

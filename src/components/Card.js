@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./card.css";
+import { useNavigate } from "react-router-dom";
+
+import { useDispatchCart, useCart } from "./ContextReducer";
 export default function Card(props) {
+  let dispatch = useDispatchCart();
+  let data = useCart();
+  const priceRef = useRef();
+
   let option = props.options;
   let priceOption = Object.keys(option);
-
+  let navigate = useNavigate();
+  const [qty, setQty] = useState(1);
+  const [size, setSize] = useState("");
+  // let fooditem = props.food_item;
+  const handleAddtoCart = async () => {
+    await dispatch({
+      type: "ADD",
+      id: props.fooditem._id,
+      name: props.fooditem.name,
+      price: finalPrice,
+      qty: qty,
+      size: size,
+    });
+    console.log(data);
+  };
+  let finalPrice = qty * parseInt(option[size]);
+  useEffect(() => {
+    setSize(priceRef.current.value);
+  }, []);
   return (
     <>
       <div>
@@ -13,21 +38,22 @@ export default function Card(props) {
         >
           <img
             // src= {"https://source.unsplash.com/random/300x200/?FriedRice"}
-            src={props.imgSrc}
+            src={props.fooditem.img}
             className="d-block w-100"
             style={{ height: "150px", objectFit: "fill" }}
             alt=""
           />
           <div className="card-body">
-            <h5 className="card-title fontchange">{props.foodName}</h5>
+            <h5 className="card-title fontchange">{props.fooditem.name}</h5>
             <p className="card-text des">
-              {props.description}
+              {props.fooditem.description}
               {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, ad? */}
-              </p>
+            </p>
             <div className="container w-100 p-0" style={{ height: "38px" }}>
               <select
                 className="m-2 w-25 h-100 bg-success rounded"
                 style={{ color: "white" }}
+                onChange={(e) => setQty(e.target.value)}
               >
                 {Array.from(Array(10), (e, i) => {
                   return (
@@ -41,6 +67,8 @@ export default function Card(props) {
               <select
                 className="m-2 w-50 h-100 bg-success rounded"
                 style={{ color: "white" }}
+                ref={priceRef}
+                onChange={(e) => setSize(e.target.value)}
               >
                 {priceOption.map((data) => {
                   return (
@@ -53,15 +81,18 @@ export default function Card(props) {
             </div>
             <hr></hr>
             <button
-              className={`btn btn-outline-warning justify-center ms-2 fontchange`}
+              className={`btn btn-outline-warning justify-center font`}
+              onClick={handleAddtoCart}
             >
               Add to Cart
             </button>
-            <button className="btn btn-outline-danger justify-center ms-2">
+            <button className="btn btn-outline-danger justify-center ms-2 font">
               Remove
             </button>
             <hr />
-            <div className="fs-5 ml-3 fontchange">Total Price:</div>
+            <div className="fs-5 ml-3 fontchange">
+              Total Price: <span className="card_style color">₹{finalPrice}/-</span>
+            </div>
           </div>
         </div>
       </div>
