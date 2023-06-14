@@ -52,7 +52,7 @@ export default function Card(props) {
             <div className="container w-100 p-0" style={{ height: "38px" }}>
               <select
                 className="m-2 w-25 h-100 bg-success rounded"
-                style={{ color: "white" }}
+                style={{ color: "white" ,fontFamily:'Poppins'}}
                 onChange={(e) => setQty(e.target.value)}
               >
                 {Array.from(Array(10), (e, i) => {
@@ -66,7 +66,7 @@ export default function Card(props) {
               </select>
               <select
                 className="m-2 w-50 h-100 bg-success rounded"
-                style={{ color: "white" }}
+                style={{ color: "white" ,fontFamily:'Poppins'}}
                 ref={priceRef}
                 onChange={(e) => setSize(e.target.value)}
               >
@@ -80,19 +80,22 @@ export default function Card(props) {
               </select>
             </div>
             <hr></hr>
+            <div className="fs-5 ml-3 fontchange">
+              Total Price:{" "}
+              <span className="card_style color">₹{finalPrice}/-</span>
+            </div>
+            {/* <button className="btn btn-outline-danger justify-center ms-2 font">
+              Remove
+            </button> */}
+            <hr />
+
             <button
-              className={`btn btn-outline-warning justify-center font`}
+              className={`btn btn-outline-warning justify-center ms-2`}
               onClick={handleAddtoCart}
+              style={{fontFamily:'Poppins'}}
             >
               Add to Cart
             </button>
-            <button className="btn btn-outline-danger justify-center ms-2 font">
-              Remove
-            </button>
-            <hr />
-            <div className="fs-5 ml-3 fontchange">
-              Total Price: <span className="card_style color">₹{finalPrice}/-</span>
-            </div>
           </div>
         </div>
       </div>

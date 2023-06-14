@@ -2,18 +2,20 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./font.css";
 import { MdDeliveryDining } from "react-icons/md";
+import Badge from "react-bootstrap/Badge";
 // MdFastfood
 import { BiLogInCircle, BiLogOutCircle } from "react-icons/bi";
 import { RiAccountCircleFill } from "react-icons/ri";
-import {AiOutlineShoppingCart} from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 // import { FaBowlFood } from "react-icons/fa";
-
+import { useCart } from "./ContextReducer";
 export default function NavBar() {
-  const navigate =  useNavigate();
-  const handleLogout = () =>{
+  const navigate = useNavigate();
+  const handleLogout = () => {
     localStorage.removeItem("authToken");
     navigate("/login");
-  }
+  };
+  const items = useCart();
   return (
     <>
       <div>
@@ -27,11 +29,14 @@ export default function NavBar() {
                 height="30"
                 className="d-inline-block align-text-top fontchange"
               />
-              <span className="fontchange fs-2 colors" style={{fontStyle:'italic'}}>
+              <span
+                className="fontchange fs-2 colors"
+                style={{ fontStyle: "italic" }}
+              >
                 {" "}
                 {/* <MdFastfood /> */}
                 {/* &nbsp; */}
-                <span > </span> Bring Me Meal
+                <span> </span> Bring Me Meal
                 {/* &nbsp; */}
                 <MdDeliveryDining />
               </span>
@@ -89,16 +94,22 @@ export default function NavBar() {
                 </div>
               ) : (
                 <div className="d-flex">
-                  <Link className="nav-link fontchange" to="/">
-                    <button className="btn btn-outline-light mx-1">
-                      <AiOutlineShoppingCart /> 
-                    </button>
-                  </Link>
-                  <Link className="nav-link fontchange" to="/login">
-                    <button className="btn btn-outline-danger mx-1" onClick={handleLogout}> 
-                      <BiLogOutCircle /> Logout
-                    </button>
-                  </Link>
+                  <div className="btn btn-outline-light mx-1">
+                    <Badge pill bg="danger" badgeContent={items.length}>
+                      <AiOutlineShoppingCart />
+                    </Badge>
+                    Cart
+                  </div>
+                  <div>
+                    <Link className="nav-link fontchange" to="/login">
+                      <button
+                        className="btn btn-outline-danger mx-1"
+                        onClick={handleLogout}
+                      >
+                        <BiLogOutCircle /> Logout
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>

@@ -7,3 +7,9 @@
 .color{
     color: #E21818;
 }
+
+.cart{
+    font-family: 'poppins';
+    max-height: auto;
+    font-weight:bold;
+}
