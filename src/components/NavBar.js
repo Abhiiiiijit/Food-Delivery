@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./font.css";
 import { MdDeliveryDining } from "react-icons/md";
@@ -9,7 +9,11 @@ import { RiAccountCircleFill } from "react-icons/ri";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 // import { FaBowlFood } from "react-icons/fa";
 import { useCart } from "./ContextReducer";
+import Modal from "../Modal";
+import Cart from "../screens/Cart";
+
 export default function NavBar() {
+  const [cartView, setCartView] = useState(false);
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("authToken");
@@ -94,12 +98,11 @@ export default function NavBar() {
                 </div>
               ) : (
                 <div className="d-flex">
-                  <div className="btn btn-outline-light mx-1">
-                    <Badge pill bg="danger" badgeContent={items.length}>
-                      <AiOutlineShoppingCart />
-                    </Badge>
-                    Cart
+                  <div className="btn btn-outline-light mx-1" onClick={()=>{setCartView(true)}}>
+                    <Badge pill bg="danger"> {items.length} </Badge>
+                    <AiOutlineShoppingCart />
                   </div>
+                  {cartView ? <Modal onClose={() => setCartView(false)}> <Cart></Cart> </Modal> : null}
                   <div>
                     <Link className="nav-link fontchange" to="/login">
                       <button

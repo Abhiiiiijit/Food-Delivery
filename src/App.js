@@ -1,5 +1,6 @@
 import "./App.css";
 import { CartProvider } from "./components/ContextReducer";
+import Cart from "./screens/Cart";
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
 import Home from "./screens/home";
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/creatuser" element={<Signup />} />
+            {/* <Route exact path="/cart" element={<Cart />} /> */}
           </Routes>
         </div>
       </Router>

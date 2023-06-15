@@ -6,48 +6,48 @@ import "./style.css";
 export default function Login() {
   const [credential, setcredential] = useState({
     email: "",
-    password: ""
+    password: "",
   });
   let navigate = useNavigate();
 
-  const handleSubmit = async (e,res) => {
+  const handleSubmit = async (e, res) => {
     e.preventDefault();
-    console.log(JSON.stringify({
+    console.log(
+      JSON.stringify({
         email: credential.email,
-        password: credential.password
-      }));
+        password: credential.password,
+      })
+    );
 
-      try {
-        const response = await fetch("http://localhost:4000/api/loginuser", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: credential.email,
-            password: credential.password
-          })
-          //   Parameter should same to Client
-        });
-        if(!response.ok){
-          throw new Error("Network Response Not OK");
-        }
-        const json = await response.json();
-        console.log(json);
-    
-        if (json.success) {
-          localStorage.setItem("authToken",json.authToken)
-          console.log(localStorage.getItem("authToken"))
-          navigate("/");
-        }
-        else{
-          alert("Enter Valid Credentials");
-        }
-      } catch (error) {
-        console.error("Error:",error);
-        alert("An Error Occured")
-
+    try {
+      const response = await fetch("http://localhost:4000/api/loginuser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: credential.email,
+          password: credential.password,
+        }),
+        //   Parameter should same to Client
+      });
+      if (!response.ok) {
+        throw new Error("Network Response Not OK");
       }
+      const json = await response.json();
+      console.log(json);
+
+      if (json.success) {
+        localStorage.setItem("authToken", json.authToken);
+        console.log(localStorage.getItem("authToken"));
+        navigate("/");
+      } else {
+        alert("Enter Valid Credentials");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An Error Occured");
+    }
   };
   const onChange = async (event) => {
     setcredential({ ...credential, [event.target.name]: event.target.value });
@@ -68,7 +68,7 @@ export default function Login() {
               "backdrop-filter": "blur( 7.5px )",
               "-webkit-backdrop-filter": "blur( 7.5px )",
               "border-radius": "10px",
-              'border': "1px solid rgba( 255, 255, 255, 0.18 )",
+              border: "1px solid rgba( 255, 255, 255, 0.18 )",
             }}
           >
             <div className="m-3">
@@ -102,7 +102,9 @@ export default function Login() {
             <button type="submit" className="btn btn-success m-3">
               Login
             </button>
-            <Link to="/creatuser" className="m-3 mx-1 btn btn-danger">New User</Link>
+            <Link to="/creatuser" className="m-3 mx-1 btn btn-danger">
+              New User
+            </Link>
           </form>
         </div>
       </div>

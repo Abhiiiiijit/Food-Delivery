@@ -15,6 +15,37 @@ export default function Card(props) {
   const [size, setSize] = useState("");
   // let fooditem = props.food_item;
   const handleAddtoCart = async () => {
+    let food = [];
+    for (const item of data) {
+      if (item.id === props.fooditem._id) {
+        food = item;
+
+        break;
+      }
+    }
+    if (food !== []) {
+      if (food.size === size) {
+        await dispatch({
+          type: "UPDATE",
+          id: props.fooditem._id,
+          price: finalPrice,
+          qty: qty,
+        });
+        return 
+      }
+      else if(food.size!==size){
+        await dispatch({
+          type: "ADD",
+          id: props.fooditem._id,
+          name: props.fooditem.name,
+          price: finalPrice,
+          qty: qty,
+          size: size,
+        });
+        return
+      }
+      return
+    }
     await dispatch({
       type: "ADD",
       id: props.fooditem._id,
@@ -23,7 +54,7 @@ export default function Card(props) {
       qty: qty,
       size: size,
     });
-    console.log(data);
+    // console.log(data);
   };
   let finalPrice = qty * parseInt(option[size]);
   useEffect(() => {
@@ -52,7 +83,7 @@ export default function Card(props) {
             <div className="container w-100 p-0" style={{ height: "38px" }}>
               <select
                 className="m-2 w-25 h-100 bg-success rounded"
-                style={{ color: "white" ,fontFamily:'Poppins'}}
+                style={{ color: "white", fontFamily: "Poppins" }}
                 onChange={(e) => setQty(e.target.value)}
               >
                 {Array.from(Array(10), (e, i) => {
@@ -66,7 +97,7 @@ export default function Card(props) {
               </select>
               <select
                 className="m-2 w-50 h-100 bg-success rounded"
-                style={{ color: "white" ,fontFamily:'Poppins'}}
+                style={{ color: "white", fontFamily: "Poppins" }}
                 ref={priceRef}
                 onChange={(e) => setSize(e.target.value)}
               >
@@ -92,7 +123,7 @@ export default function Card(props) {
             <button
               className={`btn btn-outline-warning justify-center ms-2`}
               onClick={handleAddtoCart}
-              style={{fontFamily:'Poppins'}}
+              style={{ fontFamily: "Poppins" }}
             >
               Add to Cart
             </button>
