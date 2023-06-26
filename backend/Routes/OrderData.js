@@ -9,6 +9,7 @@ router.post("/orderData", async (req, res) => {
   console.log(eId);
   if (eId === null) {
     try {
+      // Create New User Data Storage
       await Order.create({
         email: req.body.email,
         order_data: [data],
@@ -21,6 +22,7 @@ router.post("/orderData", async (req, res) => {
     }
   } else {
     try {
+      // TO Check Old User and Update the Order for the current user
       await Order.findOneAndUpdate(
         { email: req.body.email },
         { $push: { order_data: data } }.then(() => {
@@ -32,3 +34,6 @@ router.post("/orderData", async (req, res) => {
     }
   }
 });
+
+
+module.exports = router;

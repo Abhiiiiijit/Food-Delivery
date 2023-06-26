@@ -16,9 +16,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 app.use(express.json())
-app.use('/api',require("./Routes/CreateUsers"));
+app.use('/api',require("./Routes/CreateUsers.js"));
 app.use('/api',require("./Routes/orders.js")); // displayData
-
+app.use('/api',require("./Routes/OrderData.js")); 
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

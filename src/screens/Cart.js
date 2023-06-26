@@ -1,11 +1,8 @@
 import React from "react";
 import "./style.css";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
-import {BsFillTrashFill} from "react-icons/bs";
+import { BsFillTrashFill } from "react-icons/bs";
 
-
-
- 
 export default function Cart() {
   let data = useCart();
   let dispatch = useDispatchCart();
@@ -29,12 +26,39 @@ export default function Cart() {
               color: "white",
             }}
           >
-            &nbsp; <span style={{color:'Red'}}>Sorry! &#128533; </span> The Cart is Empty &nbsp;
+            &nbsp; <span style={{ color: "Red" }}>Sorry! &#128533; </span> The
+            Cart is Empty &nbsp;
           </div>
         </div>
       </div>
     );
   }
+
+  const handleCheckOut = async () => {
+    let userEmail = localStorage.getItem("userEmail");
+    // http://localhost:4000/api/orderData
+    try {
+      const response = await fetch("http://localhost:4000/api/orderData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          order_data: data,
+          email: userEmail,
+          // order_data:new Date().toDateString()
+        }),
+      });
+      console.log("Order Response:- ", response.status);
+      // 200 Means we got the response
+      if (response.ok) {
+        dispatch({ type: "DROP" });
+      }
+    } catch (error) {
+      console.error("Error:",error)
+      alert("Error Occured")
+    }
+  };
   let totalPrice = data.reduce((total, food) => total + food.price, 0);
   return (
     <>
@@ -64,7 +88,7 @@ export default function Cart() {
                   <th scope="col"></th>
                 </tr>
               </thead>
-              <tbody style={{color:'white'}}>
+              <tbody style={{ color: "white" }}>
                 {data.map((food, index) => (
                   <tr>
                     <th scope="row">{index + 1}</th>
@@ -72,7 +96,17 @@ export default function Cart() {
                     <td>{food.qty}</td>
                     <td>{food.size}</td>
                     <td>{food.price}</td>
-                    <td ><button type="button" className="btn p-0" onClick={() => { dispatch({ type: "REMOVE", index: index }) }}><BsFillTrashFill/></button> </td>
+                    <td>
+                      <button
+                        type="button"
+                        className="btn p-0"
+                        onClick={() => {
+                          dispatch({ type: "REMOVE", index: index });
+                        }}
+                      >
+                        <BsFillTrashFill />
+                      </button>{" "}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -89,7 +123,7 @@ export default function Cart() {
               <button
                 className="btn btn-outline-danger mt-5 ms-4 mb-4"
                 style={{ fontFamily: "Poppins" }}
-                // onClick={handleCheckOut}
+                onClick={handleCheckOut}
               >
                 {" "}
                 Check Out{" "}

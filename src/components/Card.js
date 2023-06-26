@@ -14,6 +14,7 @@ export default function Card(props) {
   const [qty, setQty] = useState(1);
   const [size, setSize] = useState("");
   // let fooditem = props.food_item;
+
   const handleAddtoCart = async () => {
     let food = [];
     for (const item of data) {
