@@ -2,8 +2,15 @@ import React from "react";
 import "./style.css";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
 import { BsFillTrashFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  // let navigate = useNavigate();
+  const handleCheckOut = async ()=>{
+    // navigate = ("/checkout");
+    // navigate = ("/checkout");
+    window.location.href = "/address";
+  }
   let data = useCart();
   let dispatch = useDispatchCart();
   if (data.length === 0) {
@@ -33,32 +40,6 @@ export default function Cart() {
       </div>
     );
   }
-
-  const handleCheckOut = async () => {
-    let userEmail = localStorage.getItem("userEmail");
-    // http://localhost:4000/api/orderData
-    try {
-      const response = await fetch("http://localhost:4000/api/orderData", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          order_data: data,
-          email: userEmail,
-          // order_data:new Date().toDateString()
-        }),
-      });
-      console.log("Order Response:- ", response.status);
-      // 200 Means we got the response
-      if (response.ok) {
-        dispatch({ type: "DROP" });
-      }
-    } catch (error) {
-      console.error("Error:",error)
-      alert("Error Occured")
-    }
-  };
   let totalPrice = data.reduce((total, food) => total + food.price, 0);
   return (
     <>
