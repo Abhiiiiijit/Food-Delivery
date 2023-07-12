@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
-const mongoURI =
-  "mongodb+srv://Abhijit:Abhijit2001@cluster0.oqq2kn1.mongodb.net/bringmemeal?retryWrites=true&w=majority";
-// OR
-// mongodb://Abhijit:Abhijit2001@ac-wygfjzl-shard-00-00.oqq2kn1.mongodb.net:27017,ac-wygfjzl-shard-00-01.oqq2kn1.mongodb.net:27017,ac-wygfjzl-shard-00-02.oqq2kn1.mongodb.net:27017/bringmemeal?ssl=true&replicaSet=atlas-13onfk-shard-0&authSource=admin&retryWrites=true&w=majority
+const mongoURI ="ENTER URI HERE";
 const mongoDB = async () => {
   mongoose.connect(mongoURI, { useNewUrlParser: true }, async (err, result) => {
     if (err) {
