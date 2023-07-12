@@ -1,51 +1,8 @@
-# Foody !!
+# Bring Me Meal (BM2)
+Bring Me Meal is a web application built using the MERN (MongoDB, Express, React, Node.js) stack, designed to simplify the food ordering process. With its intuitive user interface and seamless functionality, Bring Me Meal allows users to browse through a variety of food categories, add items to their cart, and proceed to checkout with just a few clicks.
 
-## Full Stomach 😋
-
-## Happy Heart 🥰
-
-=======
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-<!-- ## `Random Image Generator`
-
-#### `https://source.unsplash.com/random/700x500/?burger`
-
-## `IMP Links`
-
-1. #### `https://react-icons.github.io/react-icons` 
-
-mongodb+srv://Abhijit:Abhijit2001@cluster0.oqq2kn1.mongodb.net/
--->
+## Feature
+### 1. Login: 
+Users can securely log in to their accounts, ensuring their personal information and order history are protected.
+### 2. Signup Page: 
+New users can create an account by providing their details and setting up a password, allowing them to access the full range of features available on Bring Me Meal.
