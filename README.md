@@ -39,4 +39,4 @@ A JavaScript runtime environment used for executing server-side code and handlin
 Used for structuring the web pages and styling the application's user interface.
 
 ## Demo
-![Demo](IMAGES/demo_Video.mp4)
+![Demo](IMAGES/demo_Video.gif)
