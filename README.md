@@ -6,7 +6,7 @@ Bring Me Meal is a web application built using the MERN (MongoDB, Express, React
 ### Home Pages
 ![Home 1](IMAGES/1.png)
 ![Home 2](IMAGES/2.png)
-![Home 3](IMAGES/3.png)
+
 ### 1. Login: 
 Users can securely log in to their accounts, ensuring their personal information and order history are protected.
 ![Login](IMAGES/4.png)
