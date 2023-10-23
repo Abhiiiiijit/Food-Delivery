@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const mongoURI ="ENTER URI HERE";
+const mongoURI =
+  "mongodb+srv://Abhijit:Abhijit2001@cluster0.oqq2kn1.mongodb.net/bringmemeal?retryWrites=true&w=majority";
 const mongoDB = async () => {
   mongoose.connect(mongoURI, { useNewUrlParser: true }, async (err, result) => {
     if (err) {
